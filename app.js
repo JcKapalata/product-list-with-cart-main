@@ -1,4 +1,5 @@
-const boxMain = document.querySelector('main');
+const boxMain = document.querySelector('main main');
+boxMain.classList.add('boxMain');
 
 async function loadDesserts() {
   try {
@@ -10,11 +11,9 @@ async function loadDesserts() {
     console.log('Liste des desserts:', ListDessert);
 
     // creation du section pour chacun dessert
-    const boxSection = document.createElement('section');
-    // Exemple : afficher les noms dans la console
     ListDessert.forEach(dessert => {
-    //   console.log(dessert.name, '-', dessert.price + '€');
-      boxDesserts(boxSection, dessert.name, dessert.category,dessert.price)
+        const boxSection = document.createElement('section');
+        boxDesserts(boxSection, dessert.name, dessert.category,dessert.price)
     });
 
   } catch (error) {
